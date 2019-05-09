@@ -38,9 +38,10 @@
                     },
                     "Parameters": [
                         "LicenseAgreement",
-                        "IBMCustomerNumber",
-                        "IBMDataStageClientPartNumber",
-                        "IBMDataStagePartNumber"
+                        "IBMDataStageICN",
+                        "IBMDataStagePartNumber",
+                        "IBMDataStageClientICN",
+                        "IBMDataStageClientPartNumber"
                     ]
                 },
                 {
@@ -72,11 +73,14 @@
                 "DSClientInstanceType": {
                     "default": "InfoSphere DataStage Windows Client instance type"
                 },
-                "IBMCustomerNumber": {
-                    "default": "IBM Customer Number for InfoSphere DataStage"
+                "IBMDataStageClientICN": {
+                    "default": "IBM Customer Number for InfoSphere DataStage and QualityStage client"
                 },
                 "IBMDataStageClientPartNumber": {
                     "default": "InfoSphere DataStage and QualityStage client part number"
+                },
+                "IBMDataStageICN": {
+                    "default": "IBM Customer Number for InfoSphere DataStage"
                 },
                 "IBMDataStagePartNumber": {
                     "default": "InfoSphere DataStage part number"
@@ -159,15 +163,21 @@
             "Description": "The type of EC2 instance for the DataStage Windows Client instance.",
             "Type": "String"
         },
-        "IBMCustomerNumber": {
+        "IBMDataStageClientICN": {
             "AllowedPattern": "[0-9]+",
-            "Description": "The IBM Customer Number (ICN) listed in your Proof of Entitlement for InfoSphere DataStage.",
+            "Description": "The IBM Customer Number (ICN) listed in your Proof of Entitlement for InfoSphere DataStage and QualityStage client.",
             "NoEcho": "true",
             "Type": "String"
         },
         "IBMDataStageClientPartNumber": {
             "AllowedPattern": "[a-zA-Z0-9]+",
             "Description": "The IBM part number associated with your InfoSphere DataStage and QualityStage client license.",
+            "Type": "String"
+        },
+        "IBMDataStageICN": {
+            "AllowedPattern": "[0-9]+",
+            "Description": "The IBM Customer Number (ICN) listed in your Proof of Entitlement for InfoSphere DataStage.",
+            "NoEcho": "true",
             "Type": "String"
         },
         "IBMDataStagePartNumber": {
@@ -541,11 +551,14 @@
                     "DSClientInstanceType": {
                         "Ref": "DSClientInstanceType"
                     },
-                    "IBMCustomerNumber": {
-                        "Ref": "IBMCustomerNumber"
+                    "IBMDataStageClientICN": {
+                        "Ref": "IBMDataStageClientICN"
                     },
                     "IBMDataStageClientPartNumber": {
                         "Ref": "IBMDataStageClientPartNumber"
+                    },
+                    "IBMDataStageICN": {
+                        "Ref": "IBMDataStageICN"
                     },
                     "IBMDataStagePartNumber": {
                         "Ref": "IBMDataStagePartNumber"
